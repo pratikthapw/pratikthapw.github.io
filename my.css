@@ -1,0 +1,40 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: yellow;
+    height:64px;
+    display: flex;
+    flex-direction:row;
+    justify-content: flex-start;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+div.logo {
+    padding-right:40px;
+    bottom:2px;
+}
+
+.vline {
+    border:1px solid black;
+    height:32px;
+    padding:;
+}
+
+div.pages a {
+    text-decoration:none;
+    color:black;
+    font-size: 24px;
+    padding:20px 40px;
+}
+
+div.icons i{
+    font-size: 24px;
+    padding: 20px 20px;
+}
+
+div.pages a:hover {color:white; background-color: #AA00FF;}
