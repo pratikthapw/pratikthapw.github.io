@@ -1,0 +1,43 @@
+// Colors
+$body-background: #282c33;
+
+$text-white: #ffffff;
+
+$text-gray: #abb2bf;
+
+$text-purple: #c778dd;
+
+// Fonts
+$font-family: "Fira Code", sans-serif;
+
+$fs-small: 16px;
+$fs-medium: 24px;
+$fs-large: 32px;
+
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 600;
+
+// Determining font sizes and font weights
+body {
+  font-family: "fira code", sans-serif;
+  font-size: $fs-small;
+  font-weight: $fw-regular;
+}
+
+.hero__title {
+  font-size: $fs-large;
+  font-weight: $fw-bold;
+}
+
+.project__title,
+.skill__title,
+.about__title,
+.contact__title {
+  font-size: $fs-large;
+  font-weight: $fw-medium;
+}
+
+.hero__contact {
+  font-weight: $fw-medium;
+}

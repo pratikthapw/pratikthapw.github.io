@@ -1,30 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="my.css">
-    <script src="https://kit.fontawesome.com/bb61d5d7bb.js" crossorigin="anonymous"></script>
-    <title>My Resume</title>
-</head>
-<body>
-    <nav>
-        <div class="logo"><a href="index.html"><img src="logo.png" alt="logo:partikthapa.com.np"></a></div>
-        <div class="vline"></div>
-        <div class="pages">
-            <a href="index.html">Home</a>
-            <a href="index.html">Skills</a>
-            <a href="index.html">Projects</a>
-            <a href="index.html">Hire-Me</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Fira+Code:400,500,600"
+      rel="stylesheet"
+    />
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="SCSS/index.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="sections">
+      <!-- Nav Bar -->
+      <nav class="nav">
+        <div class="nav__logo">
+          <img src="images/logo.svg" alt="Logo Img" class="nav__logo-img" />
         </div>
-        <div class="vline"></div>
-        <div class="icons">
-            <i class="fa-brands fa-github"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-solid fa-envelope"></i>
-            <i class="fa-brands fa-figma"></i>
-        </div> 
-    </nav>
-</body>
+        <ul class="nav__items">
+          <a href="#hero">
+            <li data-nav="hero" class="nav__item cl-white">home</li>
+          </a>
+          <a href="#project">
+            <li data-nav="project" s class="nav__item cl-white">works</li>
+          </a>
+          <a href="#about">
+            <li data-nav="about" class="nav__item cl-white">about</li>
+          </a>
+          <a href="#contact">
+            <li data-nav="contact" class="nav__item cl-white">contacts</li>
+          </a>
+          <img class="ham-menu" src="./images/ham-menu.svg" alt="Burger" />
+        </ul>
+      </nav>
+
+      <!-- Ham Menu Section Mobile Only -->
+      <div class="ham__container">
+        <div class="ham">
+          <div class="ham__header">
+            <img src="images/logo.svg" alt="Logo Img" class="ham__logo-img" />
+            <img
+              src="./images/ham-menu-cross.svg"
+              alt="Burger"
+              class="ham__menu-cross"
+            />
+          </div>
+          <ul class="ham__items">
+            <li class="ham__item">home</li>
+            <li class="ham__item">works</li>
+            <li class="ham__item">about</li>
+            <li class="ham__item">contacts</li>
+          </ul>
+          <div class="ham__media-logo">
+            <a href="https://github.com/pratikthapw" target="_blank">
+              <i id="media-logos" class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://twitter.com/pratikthapw" target="_blank">
+              <i id="media-logos" class="fa-brands fa-square-twitter"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pratik-thapw-b87354210/"
+              target="_blank"
+            >
+              <i id="media-logos" class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/pratikthapww/" target="_blank">
+              <i id="media-logos" class="fa-brands fa-square-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Section -->
+      <div id="hero" class="hero section">
+        <div class="hero__text">
+          <h3 class="hero__title cl-white">
+            Pratik is a <span class="cl-purple">web designer</span> and
+            <span class="cl-purple">front-end web developer</span>
+          </h3>
+          <p class="hero__description">
+            He crafts responsive websites where technologies met creativity
+          </p>
+          <button class="hero__contact">Contact me !!</button>
+        </div>
+        <div class="hero__img">
+          <img
+            class="hero__main-img"
+            src="images/hero-img.png"
+            alt="Hero Main Image"
+          />
+          <div class="hero__work-status">
+            <img src="images/rect.svg" alt="" class="hero__rect" />
+            <p>Currently working on <span class="cl-white">Portfolio</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quote Section -->
+      <div class="quote cl-white">
+        <p class="quote__text">
+          Why do programmers prefer dark mode? Because light attracts bugs.
+        </p>
+        <p class="quote__author">- Script Daddy</p>
+      </div>
+
+      <!-- Project Section -->
+      <div id="project" class="project section">
+        <h3 class="project__title cl-white hash">projects</h3>
+        <div class="project__container">
+          <div class="project__comp">
+            <img
+              class="project__img"
+              src="images/project-img.png"
+              alt="Project"
+            />
+            <p class="project__lang">HTML CSS JavaScript SCSS</p>
+            <div class="project__description">
+              <h4 class="project__name cl-white">News HomePage</h4>
+              <p class="project__oneline">Responsive Landing Page</p>
+              <div class="project__btns">
+                <button class="project__btn">Demo</button>
+                <button class="project__btn">Code</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skill Section -->
+      <div class="skill">
+        <h3 class="skill__title cl-white hash">skills</h3>
+        <div class="skill__container">
+          <img class="skill__img" src="images/skills.svg" alt="skills image" />
+          <div class="skill__area">
+            <div class="skill__component">
+              <h4 class="skill__header cl-white">Languages</h4>
+              <p class="skill__content">HTML CSS JavaScript</p>
+            </div>
+            <div class="skill__component">
+              <h4 class="skill__header cl-white">Tools</h4>
+              <p class="skill__content" style="line-height: 1.8">
+                VSCode Linux Figma <br />
+                Git Font-Awesome Vite
+              </p>
+            </div>
+            <div class="skill__component">
+              <h4 class="skill__header cl-white">Frameworks</h4>
+              <p class="skill__content">React Tailwind Bootstrap</p>
+            </div>
+            <div class="skill__component">
+              <h4 class="skill__header cl-white">Other</h4>
+              <p class="skill__content" style="line-height: 1.8">
+                SCSS BEM NPM<br />
+                Webpack Emmet
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About Section -->
+      <div id="about" class="about section">
+        <h3 class="about__title cl-white hash">about-me</h3>
+        <div class="about__container">
+          <p class="about__text">
+            <br />
+
+            Hello, I'm Pratik!
+            <br />
+            <br />
+            I'm a self-taught front-end developer based in Pokhara, Nepal. I can
+            develop responsive websites from scratch and raise them into modern
+            user-friendly web experiences.
+            <br />
+            <br />
+            Transforming my creativity and knowledge into a websites has been my
+            passion for over a year. I have been helping various clients to
+            establish their presence online. I always strive to learn about the
+            newest technologies and frameworks.
+          </p>
+          <img class="about__img" src="images/about.svg" alt="Person Image" />
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div id="contact" class="contact section">
+        <h3 class="contact__title cl-white hash">contacts</h3>
+        <div class="contact__container">
+          <p class="contact__info">
+            I'm interested in freelance opportunities. However, if you have
+            other request or question, don't hesitate to contact me
+          </p>
+          <div class="contact__box">
+            <h4 class="contact__msg cl-white">Message me here</h4>
+            <a
+              class="contact__component"
+              href="mailto:pratikthapw@gmail.com"
+              target="_blank"
+            >
+              <i id="media-logos" class="fa-solid fa-envelope"></i>
+              <span>pratikthapw@gmail.com</span>
+            </a>
+            <a
+              class="contact__component"
+              href="https://www.instagram.com/pratikthapww/"
+              target="_blank"
+            >
+              <i id="media-logos" class="fa-brands fa-square-instagram"></i>
+              <span>@pratikthapww</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <hr class="horizontal-line" />
+
+      <!-- Footer Section -->
+      <footer class="footer">
+        <div class="footer__main">
+          <div class="footer__info">
+            <img src="images/logo.svg" alt="Logo" />
+            <p class="footer__about cl-white">Front-end web developer</p>
+          </div>
+          <div class="footer__media">
+            <h4 class="footer__title cl-white">Media</h4>
+            <div class="footer__media-logo">
+              <a href="https://github.com/pratikthapw" target="_blank">
+                <i id="media-logos" class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://twitter.com/pratikthapw" target="_blank">
+                <i id="media-logos" class="fa-brands fa-square-twitter"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/pratik-thapw-b87354210/"
+                target="_blank"
+              >
+                <i id="media-logos" class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://www.instagram.com/pratikthapww/" target="_blank">
+                <i id="media-logos" class="fa-brands fa-square-instagram"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          © Copyright 2023. All rights reserved
+        </div>
+      </footer>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/bb61d5d7bb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
 </html>

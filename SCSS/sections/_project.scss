@@ -1,0 +1,40 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.project__container {
+  @include displayFlex(row, center, center);
+  flex-wrap: wrap;
+  gap: 1rem;
+  @include respond(large) {
+    @include displayFlex(row, center, flex-start);
+  }
+}
+
+.project__comp {
+  border: 1px solid $text-gray;
+  height: auto;
+}
+
+// .project__img {
+// }
+
+.project__lang {
+  border: 1px solid $text-gray;
+  border-top: none;
+  padding: 0.5rem;
+}
+
+.project__description {
+  @include displayFlex(column, flex-start, space-between);
+  padding: 0.5rem;
+  row-gap: 1rem;
+}
+
+.project__btns {
+  width: 50%;
+  @include displayFlex(row, center, space-between);
+}
+
+.project__btn {
+  @include btn-design(0.5rem);
+}

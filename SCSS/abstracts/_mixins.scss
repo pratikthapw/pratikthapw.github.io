@@ -1,0 +1,54 @@
+@use "./variables" as *;
+
+// Defining Size Height & Width
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+// Display Flex
+@mixin displayFlex($direction, $align, $justify: $align) {
+  display: flex;
+  flex-flow: $direction nowrap;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+// Breakpoints Media Queries
+@mixin respond($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 37.5rem) {
+      @content;
+    }
+  }
+  @if $breakpoint == medium {
+    @media (min-width: 37.5rem) {
+      @content;
+    }
+  }
+  @if $breakpoint == large {
+    @media (min-width: 62rem) {
+      @content;
+    }
+  }
+}
+
+// Button Design with custom Padding
+@mixin btn-design($padVr, $padHr: $padVr) {
+  color: $text-white;
+  background: none;
+  outline: none;
+  border: 1px solid $text-purple;
+  padding: $padVr $padHr;
+  cursor: pointer;
+  &:hover {
+    background: $text-purple;
+  }
+}
+
+// On hover nav & ham items
+@mixin nav-item {
+  &:hover {
+    color: $text-white;
+  }
+}

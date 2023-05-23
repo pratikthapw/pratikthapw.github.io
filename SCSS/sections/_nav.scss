@@ -1,0 +1,72 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.nav {
+  position: sticky;
+  top: 0;
+  background: $body-background;
+  z-index: 1;
+  @include displayFlex(row, center, space-between);
+
+  &__items {
+    @include displayFlex(row, center, space-between);
+
+    @include respond(medium) {
+      width: 60%;
+    }
+    @include respond(large) {
+      width: 45%;
+    }
+  }
+  .nav__item {
+    @include nav-item;
+    @include respond(small) {
+      display: none;
+    }
+  }
+  .ham-menu {
+    padding: 0.5rem;
+    @include respond(medium) {
+      display: none;
+    }
+  }
+}
+
+.ham__container {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: $body-background;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: none;
+  @include respond(medium) {
+    display: none;
+  }
+}
+
+.ham {
+  height: 60%;
+  margin: 1rem;
+  margin-top: 2rem;
+  @include displayFlex(column, normal, space-between);
+  &__header {
+    @include displayFlex(row, center, space-between);
+  }
+
+  &__items {
+    & > * {
+      @include nav-item;
+    }
+
+    height: 60%;
+    @include displayFlex(column, flex-start, space-between);
+  }
+
+  &__media-logo {
+    @include displayFlex(row, center, space-evenly);
+  }
+}

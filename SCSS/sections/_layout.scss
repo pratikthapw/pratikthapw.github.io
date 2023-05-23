@@ -1,0 +1,45 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.sections {
+  display: grid;
+  grid-template-rows: repeat(autofit, 1fr);
+  row-gap: 1rem;
+  margin: 1rem 0.8rem;
+  & > * + * {
+    padding-top: 5rem;
+  }
+  @include respond(medium) {
+    margin: 1rem 1.8rem;
+  }
+  @include respond(large) {
+    margin: 1rem 12%;
+  }
+}
+
+.skill,
+.project,
+.contact {
+  @include displayFlex(column, flex-start, space-between);
+  row-gap: 1rem;
+}
+
+.nav,
+.nav__items,
+.hero,
+.project__container,
+.skill__container,
+.about__container,
+.contact__container,
+.footer__main {
+  @include displayFlex(row, center, space-between);
+  @include respond(small) {
+    @include displayFlex(column, center, space-between);
+  }
+}
+
+.horizontal-line {
+  padding: 0;
+  width: 100%;
+  margin-top: 4rem;
+}

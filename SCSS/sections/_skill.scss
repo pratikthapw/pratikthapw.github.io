@@ -1,0 +1,24 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.skill__container {
+  width: 100%;
+  gap: 1rem;
+}
+
+.skill__area {
+  width: 100%;
+  @include displayFlex(row, center, center);
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.skill__component {
+  border: 1px solid $text-gray;
+}
+
+.skill__header,
+.skill__content {
+  padding: 0.5rem;
+  border-bottom: 1px solid $text-gray;
+}

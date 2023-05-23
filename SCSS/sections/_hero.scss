@@ -1,0 +1,91 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.hero {
+  column-gap: 1.5rem;
+  @include respond(large) {
+    column-gap: 5rem;
+  }
+}
+.hero__title,
+.hero__description,
+.hero__contact {
+  margin-bottom: 1.5rem;
+}
+
+.hero__contact {
+  @include btn-design(0.6rem, 1rem);
+}
+
+.hero__img {
+  position: relative;
+}
+
+.hero__main-img {
+  width: 100vw;
+  @include respond(medium) {
+  }
+  @include respond(large) {
+    width: 45vw;
+  }
+}
+
+.hero__work-status {
+  border: 1px solid $text-gray;
+  width: 100%;
+  padding: 0.2rem;
+  @include displayFlex(row, center, flex-start);
+}
+
+.hero__rect {
+  margin-right: 0.5rem;
+  @include respond(large) {
+    margin-right: 1.5rem;
+  }
+}
+
+// Quote Section
+.quote {
+  padding: 0;
+  position: relative;
+  margin-top: 4rem;
+  margin-inline: auto;
+
+  @include respond(medium) {
+    width: 80%;
+  }
+  @include respond(large) {
+    width: 60%;
+  }
+}
+
+.quote__text {
+  border: 1px solid $text-gray;
+  padding: 0.5rem;
+}
+
+.quote__text::before {
+  content: "❝";
+  color: $text-purple;
+  font-size: 3rem;
+  position: absolute;
+  top: -50%;
+  left: 0%;
+}
+
+.quote__author::after {
+  content: "❞";
+  color: $text-purple;
+  font-size: 3rem;
+  position: absolute;
+  top: 100%;
+  right: 0%;
+}
+
+.quote__author {
+  border: 1px solid $text-gray;
+  border-top: none;
+  display: inline;
+  float: right;
+  padding: 0.5rem;
+}

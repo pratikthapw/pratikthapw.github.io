@@ -1,0 +1,62 @@
+@use "../abstracts" as *;
+
+body {
+  background: $body-background;
+  color: $text-gray;
+  height: 100%;
+  width: 100%;
+}
+
+.nav__item::before,
+.ham__item::before {
+  content: "#";
+  color: $text-purple;
+}
+
+.cl-white {
+  color: $text-white;
+}
+
+.cl-purple {
+  color: $text-purple;
+}
+
+.hash::before {
+  content: "#";
+  color: $text-purple;
+}
+
+.hash::after {
+  content: "-----";
+  @include respond(medium) {
+    content: "----------";
+  }
+  @include respond(large) {
+    content: "---------------";
+  }
+  color: $text-purple;
+  margin-left: 1rem;
+}
+
+.nav__logo,
+.nav__item,
+.ham-menu,
+.ham__logo-img,
+.ham__menu-cross,
+.ham__item,
+.contact__component {
+  cursor: pointer;
+}
+
+#media-logos {
+  font-size: 24px;
+  cursor: pointer;
+  &:hover {
+    color: $text-white;
+  }
+}
+
+a {
+  color: $text-gray;
+  text-decoration: none;
+}

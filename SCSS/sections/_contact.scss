@@ -1,0 +1,41 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.contact__container {
+  text-align: center;
+  gap: 1rem;
+  @include respond(large) {
+    gap: 12rem;
+  }
+}
+.contact__info {
+  @include respond(medium) {
+    flex: 1 1 30%;
+  }
+}
+
+.contact__component {
+  @include displayFlex(row, center, flex-start);
+  gap: 0.5rem;
+}
+
+.contact__box {
+  border: 1px solid $text-gray;
+  @include displayFlex(column, flex-start, space-between);
+  row-gap: 1rem;
+  padding: 0.8rem;
+}
+
+.contact__msg {
+  align-self: center;
+}
+
+.contact__insta {
+  font-size: 27px;
+  text-indent: 4px;
+  margin-right: 0.5rem;
+}
+
+.contact__component:hover {
+  color: $text-white;
+}

@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+@use "../base" as *;
+
+.about__container {
+  gap: 1rem;
+  @include respond(large) {
+    gap: 12rem;
+  }
+}
+.about__img {
+  height: 35vh;
+  flex: 1 1 30%;
+  @include respond(medium) {
+    height: 60vh;
+  }
+}
+
+.about__text {
+  flex: 1 1 70%;
+}
