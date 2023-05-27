@@ -7,7 +7,7 @@
   row-gap: 1rem;
   margin: 1rem 0.8rem;
   & > * + * {
-    padding-top: 5rem;
+    padding-top: 4.2rem;
   }
   @include respond(medium) {
     margin: 1rem 1.8rem;

@@ -167,7 +167,7 @@ a {
   margin: 1rem 0.8rem;
 }
 .sections > * + * {
-  padding-top: 5rem;
+  padding-top: 4.2rem;
 }
 @media (min-width: 37.5rem) {
   .sections {
@@ -270,12 +270,12 @@ a {
 
 .ham__container {
   z-index: 1;
-  position: absolute;
-  top: 50%;
+  position: relative;
+  top: 53%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #282c33;
-  height: 100%;
+  height: 120%;
   width: 100%;
   position: fixed;
   display: none;
@@ -287,9 +287,8 @@ a {
 }
 
 .ham {
-  height: 60%;
+  height: 50%;
   margin: 1rem;
-  margin-top: 2rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: normal;
