@@ -17,87 +17,43 @@ hamMenuCross.addEventListener("click", () => {
 const container = document.querySelector(".project__container");
 const images = ["images/project-img.png", "images/project-img.png"];
 
-const languages = [
-  "HTML CSS JavaScript SCSS",
-  "HTML CSS JavaScript SCSS",
-  "HTML CSS JavaScript SCSS",
-];
-
-const names = ["News HomePage", "News HomePage", "News HomePage"];
-
-const onelines = [
-  "Responsive Landing Page",
-  "Responsive Landing Page",
-  "Responsive Landing Page",
-];
-
-for (let i = 0; i < images.length; i++) {
-  // Creating Component for each project
-  const comp = document.createElement("div");
-  comp.classList.add("project__comp");
-
-  // Adding Project Image to component
-  const img = document.createElement("img");
-  img.classList.add("project__img");
-  img.src = images[i];
-  comp.appendChild(img);
-
-  // Adding Project Languages
-  const lang = document.createElement("p");
-  lang.classList.add("project__lang");
-  const langText = document.createTextNode(languages[i]);
-  lang.appendChild(langText);
-  comp.appendChild(lang);
-
-  // Creating project description container
-  const description = document.createElement("div");
-  description.classList.add("project__description");
-  comp.appendChild(description);
-
-  // Adding Project Name
-  const name = document.createElement("h4");
-  name.classList.add("project__name", "cl-white");
-  const nameText = document.createTextNode(names[i]);
-  name.appendChild(nameText);
-  description.appendChild(name);
-
-  // Adding Project oneline description
-  const oneline = document.createElement("p");
-  oneline.classList.add("project__oneline");
-  const onelineText = document.createTextNode(onelines[i]);
-  oneline.appendChild(onelineText);
-  description.appendChild(oneline);
-
-  // Creating Container for Btns
-  const btnContainer = document.createElement("div");
-  btnContainer.classList.add("project__btns");
-  description.appendChild(btnContainer);
-
-  // Adding Demo btn
-  const demo = document.createElement("button");
-  demo.classList.add("project__btn");
-  const demoText = document.createTextNode("Demo");
-  demo.appendChild(demoText);
-  btnContainer.appendChild(demo);
-
-  // Adding View Code btn
-  const code = document.createElement("button");
-  code.classList.add("project__btn");
-  const codeText = document.createTextNode("Code");
-  code.appendChild(codeText);
-  btnContainer.appendChild(code);
-
-  container.appendChild(comp);
+function newProject({ languages, name, oneLine }) {
+  let html = `
+    <div class="project__comp">
+      <img class="project__img" src="images/project-img.png" alt="Project" />
+      <p class="project__lang">${languages}</p>
+      <div class="project__description">
+        <h4 class="project__name cl-white">${name}</h4>
+        <p class="project__oneline">${oneLine}</p>
+        <div class="project__btns">
+          <button class="project__btn">Demo</button>
+          <button class="project__btn">Code</button>
+        </div>
+      </div>
+    </div>
+  `;
+  container.insertAdjacentHTML("beforeend", html);
 }
 
-// Using Intersection Observer
-const sections = document.querySelectorAll(".section");
-const nav = document.querySelector(".nav");
+newProject({
+  languages: "HTML JavaScript SCSS",
+  name: "News HomePage",
+  oneLine: "Responsive Landing Page",
+});
 
+newProject({
+  languages: "HTML Bootstrap JavaScript SCSS",
+  name: "News HomePage",
+  oneLine: "Responsive Landing Page",
+});
+
+// Using Intersection Observer Api for Active Nav Links
+const sections = document.querySelectorAll(".section");
 const navItem = document.querySelectorAll(".nav__item");
+const hamContainer = document.querySelector(".ham__container");
+const hamItem = document.querySelectorAll(".ham__item");
 
 const options = {
-  // root: document.querySelector(".sections"),
   threshold: "0.2",
 };
 
@@ -106,14 +62,22 @@ const observer = new IntersectionObserver((entries, observer) => {
     if (!entry.isIntersecting) {
       return;
     }
-    console.log(entry.target.id);
+
+    // Active Links For Large Screens
     navItem.forEach((link) => {
-      // Active Section
       link.classList.remove("cl-white");
 
       if (entry.target.id === link.dataset.nav) {
         link.classList.add("cl-white");
-        console.log(entry.target.id);
+      }
+    });
+
+    // Active Links For HamMenu Mobile Screens
+    hamItem.forEach((link) => {
+      link.classList.remove("cl-white");
+
+      if (entry.target.id === link.dataset.ham) {
+        link.classList.add("cl-white");
       }
     });
   });
@@ -121,4 +85,11 @@ const observer = new IntersectionObserver((entries, observer) => {
 
 sections.forEach((section) => {
   observer.observe(section);
+});
+
+// Hiding HamMenu When Clicked on HamItems
+hamItem.forEach((item) => {
+  item.addEventListener("click", () => {
+    hamContainer.style.display = "";
+  });
 });
